@@ -4,18 +4,18 @@
         <div class="pesma-cta-banner rounded-4 shadow-lg overflow-hidden position-relative p-4 p-md-5">
             <div class="row align-items-center g-4 position-relative" style="z-index: 2;">
                 <div class="col-lg-8">
-                    <!-- Badge Kategori Terpadu -->
+                    <!-- Badge Kategori Fleksibel -->
                     <div class="d-inline-flex align-items-center gap-2 mb-3 px-3 py-1 rounded-pill pesma-cta-tag">
                         <iconify-icon icon="solar:heart-bold" class="text-warning"></iconify-icon>
-                        <span class="fw-semibold">Program Filantropi & Kebaikan Pesma An-Nur</span>
+                        <span class="fw-semibold">Portal Filantropi & Donasi Kebaikan</span>
                     </div>
 
                     <h2 class="fw-bold text-white mb-3 pesma-cta-title">
-                        Mengalirkan Pahala Jariyah untuk Santri Pejuang Al-Qur'an & Dakwah Ummat
+                        Mengalirkan Pahala Jariyah untuk Pendidikan Santri & Kebaikan Ummat
                     </h2>
 
                     <p class="pesma-cta-desc mb-4">
-                        Dukung beasiswa pendidikan santri mahasiswa tahfidz Pesma An-Nur, pengembangan sarana dakwah, serta pembinaan adik-adik santri Pesantren Al-Bisri secara transparan dan amanah.
+                        Dukung beasiswa pendidikan santri, pemeliharaan sarana belajar dan ibadah, serta kegiatan sosial kemasyarakatan secara transparan dan amanah.
                     </p>
 
                     <div class="d-flex flex-wrap gap-3 align-items-center">
@@ -36,8 +36,8 @@
                 <div class="col-lg-4 text-center d-none d-lg-block">
                     <div class="pesma-cta-glass p-4 rounded-4 text-center">
                         <iconify-icon icon="solar:book-bookmark-minimalistic-bold-duotone" class="display-3 text-warning mb-2"></iconify-icon>
-                        <h5 class="fw-bold text-white mb-1">Pesma An-Nur</h5>
-                        <p class="small text-white text-opacity-75 mb-3">& Unit Binaan Pesantren Al-Bisri</p>
+                        <h5 class="fw-bold text-white mb-1">Lembaga Filantropi</h5>
+                        <p class="small text-white text-opacity-75 mb-3">Pendidikan, Sarana & Sosial</p>
                         
                         <div class="d-flex justify-content-center gap-3 text-center border-top border-white border-opacity-25 pt-3">
                             <div>
