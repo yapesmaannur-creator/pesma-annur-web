@@ -227,7 +227,7 @@
                                 <li><a href="/">Beranda</a></li>
                                 <li><a href="/tentang">Tentang</a></li>
                                 <li><a href="/program">Program</a></li>
-                                <li><a href="https://e-maktab.pesma-annur.net/donasi" target="_blank" style="color: #10b981 !important; font-weight: 700;"><iconify-icon icon="solar:heart-bold" class="me-1"></iconify-icon>Donasi</a></li>
+                                <li><a href="{{ config('app.donasi_url', env('DONASI_URL', 'https://e-maktab.pesma-annur.net/donasi')) }}" target="_blank" style="color: #10b981 !important; font-weight: 700;"><iconify-icon icon="solar:heart-bold" class="me-1"></iconify-icon>Donasi</a></li>
                                 <li><a href="/kegiatan">Kegiatan</a></li>
                                 <li><a href="/galeri">Galeri</a></li>
                                 <li><a href="/artikel">Artikel</a></li>

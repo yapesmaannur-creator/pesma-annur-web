@@ -19,7 +19,7 @@
                     </p>
 
                     <div class="d-flex flex-wrap gap-3 align-items-center">
-                        <a href="https://e-maktab.pesma-annur.net/donasi" target="_blank" class="rbt-btn btn-warning-custom shadow-lg">
+                        <a href="{{ config('app.donasi_url', env('DONASI_URL', 'https://e-maktab.pesma-annur.net/donasi')) }}" target="_blank" class="rbt-btn btn-warning-custom shadow-lg">
                             <span class="icon-reverse-wrapper">
                                 <span class="btn-text">Salurkan Donasi Sekarang</span>
                                 <span class="btn-icon"><iconify-icon icon="solar:arrow-right-up-linear" class="fs-5"></iconify-icon></span>
