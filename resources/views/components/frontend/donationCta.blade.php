@@ -28,7 +28,7 @@
                         </a>
                         <div class="pesma-cta-subtext small">
                             <iconify-icon icon="solar:shield-check-bold" class="text-warning me-1 fs-5 align-middle"></iconify-icon>
-                            <span>QRIS, E-Wallet & Transfer Bank • Bebas Biaya Admin</span>
+                            <span>100% Amanah &bull; Tercatat Resmi & Transparan</span>
                         </div>
                     </div>
                 </div>
