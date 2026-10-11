@@ -321,29 +321,52 @@
     .annur-hero .carousel-control-prev { left: 24px; }
     .annur-hero .carousel-control-next { right: 24px; }
 
+    @media (min-width: 992px) and (max-width: 1199px) {
+      .annur-hero {
+        padding: 75px 24px;
+        min-height: 75vh;
+      }
+      .annur-hero__container {
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 36px;
+      }
+      .annur-hero h1 {
+        font-size: 32px;
+      }
+      .annur-hero p {
+        font-size: 14.5px;
+      }
+      .annur-hero__stats strong {
+        font-size: 14.5px;
+      }
+      .annur-hero__stats span {
+        font-size: 12px;
+      }
+    }
+
     @media (max-width: 991px) {
       .annur-hero {
         min-height: auto;
-        padding: 70px 20px 54px;
+        padding: 65px 20px 50px;
       }
 
       .annur-hero__video-bg {
-        object-position: 72% center;
-        opacity: 0.32;
+        object-position: 75% center;
+        opacity: 0.35;
       }
 
       .annur-hero__overlay {
         background: linear-gradient(
           180deg,
-          rgba(7, 21, 38, 0.85) 0%,
-          rgba(7, 21, 38, 0.94) 60%,
+          rgba(7, 21, 38, 0.88) 0%,
+          rgba(7, 21, 38, 0.94) 55%,
           #071526 100%
         );
       }
 
       .annur-hero__container {
         grid-template-columns: 1fr;
-        gap: 32px;
+        gap: 30px;
       }
 
       .annur-hero__content {
@@ -356,9 +379,14 @@
       }
 
       .annur-hero__stats {
-        max-width: 480px;
+        max-width: 580px;
         margin: 32px auto 0;
-        text-align: left;
+        text-align: center;
+      }
+
+      .annur-hero__stats div {
+        align-items: center;
+        text-align: center;
       }
 
       .annur-hero__visual {
@@ -373,55 +401,71 @@
 
     @media (max-width: 576px) {
       .annur-hero {
-        padding-top: 48px;
-        padding-bottom: 36px;
+        padding-top: 45px;
+        padding-bottom: 35px;
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      .annur-hero__video-bg {
+        object-position: center center;
+        opacity: 0.28;
       }
 
       .annur-hero__badge {
         font-size: 11px;
         letter-spacing: 0.3px;
         padding: 6px 14px;
-        margin-bottom: 16px;
+        margin-bottom: 14px;
         max-width: 100%;
+        white-space: normal;
         text-align: center;
       }
 
       .annur-hero h1 {
-        font-size: 24px;
-        line-height: 1.3;
+        font-size: clamp(21px, 6.2vw, 26px);
+        line-height: 1.32;
+        word-break: break-word;
       }
 
       .annur-hero p {
         font-size: 13.5px;
-        margin-top: 12px;
+        line-height: 1.6;
+        margin-top: 10px;
       }
 
       .annur-hero__actions {
         flex-direction: column;
-        margin-top: 22px;
+        width: 100%;
+        margin-top: 20px;
       }
 
       .annur-btn {
         width: 100%;
+        min-height: 48px;
+        font-size: 14px;
       }
 
       .annur-hero__stats {
         grid-template-columns: 1fr;
-        gap: 10px;
-        margin-top: 24px;
-        padding-top: 18px;
+        gap: 8px;
+        margin-top: 22px;
+        padding-top: 16px;
+        width: 100%;
         text-align: left;
       }
 
       .annur-hero__stats div {
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(201, 162, 39, 0.22);
-        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(201, 162, 39, 0.2);
+        border-radius: 10px;
         padding: 10px 14px;
+        text-align: left;
+        align-items: flex-start;
       }
 
       .annur-hero__stats strong {
-        font-size: 14.5px;
+        font-size: 14px;
       }
 
       .annur-hero__stats span {
