@@ -207,6 +207,50 @@
       align-items: center;
     }
 
+    /* Dedicated 3D Video Showcase Card for Mobile & Tablet (Separated, not in background) */
+    .annur-hero__showcase-card {
+      display: none; /* Hidden on desktop because the video is already the full-bleed background */
+      position: relative;
+      width: 100%;
+      max-width: 520px;
+      margin: 12px auto 0;
+    }
+
+    .annur-hero__showcase-glow {
+      position: absolute;
+      inset: -10px;
+      background: radial-gradient(circle, rgba(201, 162, 39, 0.28) 0%, rgba(7, 21, 38, 0) 70%);
+      border-radius: 22px;
+      filter: blur(18px);
+      z-index: 1;
+    }
+
+    .annur-hero__showcase-inner {
+      position: relative;
+      z-index: 2;
+      border-radius: 18px;
+      padding: 8px;
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(14px);
+      border: 1.5px solid rgba(201, 162, 39, 0.35);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+    }
+
+    .annur-hero__showcase-media {
+      border-radius: 12px;
+      overflow: hidden;
+      aspect-ratio: 16 / 9;
+      background: #071526;
+      position: relative;
+    }
+
+    .annur-hero__showcase-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
     @keyframes spinOrbit {
       from { transform: rotate(0deg); }
       to { transform: rotate(360deg); }
@@ -347,26 +391,21 @@
     @media (max-width: 991px) {
       .annur-hero {
         min-height: auto;
-        padding: 65px 20px 50px;
+        padding: 60px 20px 48px;
       }
 
+      /* Hide background video on mobile/tab to avoid visual clash and double playback */
       .annur-hero__video-bg {
-        object-position: 75% center;
-        opacity: 0.35;
+        display: none !important;
       }
 
       .annur-hero__overlay {
-        background: linear-gradient(
-          180deg,
-          rgba(7, 21, 38, 0.88) 0%,
-          rgba(7, 21, 38, 0.94) 55%,
-          #071526 100%
-        );
+        display: none !important;
       }
 
       .annur-hero__container {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 28px;
       }
 
       .annur-hero__content {
@@ -380,7 +419,7 @@
 
       .annur-hero__stats {
         max-width: 580px;
-        margin: 32px auto 0;
+        margin: 28px auto 0;
         text-align: center;
       }
 
@@ -389,8 +428,16 @@
         text-align: center;
       }
 
+      /* Show separate visual card on tablet and phone */
       .annur-hero__visual {
-        display: none;
+        display: flex !important;
+        justify-content: center;
+        width: 100%;
+        margin-top: 14px;
+      }
+
+      .annur-hero__showcase-card {
+        display: block !important;
       }
 
       .annur-hero .carousel-control-prev,
@@ -401,15 +448,24 @@
 
     @media (max-width: 576px) {
       .annur-hero {
-        padding-top: 45px;
-        padding-bottom: 35px;
+        padding-top: 42px;
+        padding-bottom: 32px;
         padding-left: 16px;
         padding-right: 16px;
       }
 
-      .annur-hero__video-bg {
-        object-position: center center;
-        opacity: 0.28;
+      .annur-hero__showcase-card {
+        max-width: 100%;
+        margin-top: 6px;
+      }
+
+      .annur-hero__showcase-inner {
+        padding: 6px;
+        border-radius: 14px;
+      }
+
+      .annur-hero__showcase-media {
+        border-radius: 10px;
       }
 
       .annur-hero__badge {
@@ -449,7 +505,7 @@
       .annur-hero__stats {
         grid-template-columns: 1fr;
         gap: 8px;
-        margin-top: 22px;
+        margin-top: 20px;
         padding-top: 16px;
         width: 100%;
         text-align: left;
@@ -567,7 +623,7 @@
                             </div>
                         </div>
                         
-                        <!-- Right Column (Kept completely open so the 3D mosque background shines large & unobstructed) -->
+                        <!-- Right Column: on desktop, transparent window for full BG video; on mobile/tab, displays separate video card! -->
                         <div class="annur-hero__visual">
                             @if($imageExists && !empty($imageUrl))
                                 <!-- Custom Banner Image Frame (Only when custom photo uploaded in Admin Panel) -->
@@ -576,6 +632,18 @@
                                     <div style="position: relative; z-index: 2; border-radius: 20px; padding: 12px; background: rgba(255, 255, 255, 0.06); backdrop-filter: blur(12px); border: 1.5px solid rgba(201, 162, 39, 0.35); box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);">
                                         <div style="border-radius: 14px; overflow: hidden; height: 380px; position: relative;">
                                             <img src="{{ $imageUrl }}" alt="Banner" style="width: 100%; height: 100%; object-fit: cover; object-position: top center;">
+                                        </div>
+                                    </div>
+                                </div>
+                            @else
+                                <!-- Separate 3D Video Card for Mobile & Tablet (Hidden on desktop because video is already the BG) -->
+                                <div class="annur-hero__showcase-card">
+                                    <div class="annur-hero__showcase-glow"></div>
+                                    <div class="annur-hero__showcase-inner">
+                                        <div class="annur-hero__showcase-media">
+                                            <video class="annur-hero__showcase-video" autoplay muted loop playsinline poster="{{ asset('frontend/assets/images/hero/hero-pesantren.jpg') }}">
+                                                <source src="{{ asset('frontend/assets/images/hero/hero-pesantren.mp4') }}" type="video/mp4">
+                                            </video>
                                         </div>
                                     </div>
                                 </div>
@@ -667,7 +735,7 @@
                 </div>
             </div>
             
-            <!-- Right Column (Kept completely open so the 3D mosque background shines large & unobstructed) -->
+            <!-- Right Column: on desktop, transparent window for full BG video; on mobile/tab, displays separate video card! -->
             <div class="annur-hero__visual">
                 @if($staticImageExists && !empty($staticImageUrl))
                     <!-- Custom Banner Image Frame -->
@@ -676,6 +744,18 @@
                         <div style="position: relative; z-index: 2; border-radius: 20px; padding: 12px; background: rgba(255, 255, 255, 0.06); backdrop-filter: blur(12px); border: 1.5px solid rgba(201, 162, 39, 0.35); box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);">
                             <div style="border-radius: 14px; overflow: hidden; height: 380px; position: relative;">
                                 <img src="{{ $staticImageUrl }}" alt="Banner" style="width: 100%; height: 100%; object-fit: cover; object-position: top center;">
+                            </div>
+                        </div>
+                    </div>
+                @else
+                    <!-- Separate 3D Video Card for Mobile & Tablet -->
+                    <div class="annur-hero__showcase-card">
+                        <div class="annur-hero__showcase-glow"></div>
+                        <div class="annur-hero__showcase-inner">
+                            <div class="annur-hero__showcase-media">
+                                <video class="annur-hero__showcase-video" autoplay muted loop playsinline poster="{{ asset('frontend/assets/images/hero/hero-pesantren.jpg') }}">
+                                    <source src="{{ asset('frontend/assets/images/hero/hero-pesantren.mp4') }}" type="video/mp4">
+                                </video>
                             </div>
                         </div>
                     </div>
