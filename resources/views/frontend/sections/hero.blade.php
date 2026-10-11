@@ -27,6 +27,74 @@
       padding: 85px 20px;
     }
 
+    .annur-hero__showcase-card {
+      position: relative;
+      width: 100%;
+      max-width: 520px;
+    }
+
+    .annur-hero__showcase-glow {
+      position: absolute;
+      inset: -15px;
+      background: radial-gradient(circle at center, rgba(201, 162, 39, 0.28) 0%, rgba(7, 21, 38, 0) 70%);
+      filter: blur(28px);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .annur-hero__showcase-inner {
+      position: relative;
+      z-index: 2;
+      border-radius: 22px;
+      overflow: hidden;
+      background: rgba(7, 21, 38, 0.9);
+      border: 1.5px solid rgba(201, 162, 39, 0.38);
+      box-shadow: 0 24px 50px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+      transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .annur-hero__showcase-inner:hover {
+      transform: translateY(-4px);
+      border-color: rgba(232, 199, 102, 0.65);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 30px rgba(201, 162, 39, 0.25);
+    }
+
+    .annur-hero__showcase-video {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      display: block;
+    }
+
+    .annur-hero__showcase-tag {
+      position: absolute;
+      bottom: 14px;
+      left: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: rgba(7, 21, 38, 0.82);
+      border: 1px solid rgba(201, 162, 39, 0.32);
+      border-radius: 999px;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      color: #E8C766;
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+    }
+
+    .annur-hero__showcase-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #4ade80;
+      box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.25);
+    }
+
     .annur-hero__bg {
       position: absolute;
       inset: 0;
@@ -303,6 +371,14 @@
         padding: 70px 20px 54px;
       }
 
+      .annur-hero__video-overlay {
+        background: linear-gradient(180deg, 
+          rgba(7, 21, 38, 0.88) 0%, 
+          rgba(7, 21, 38, 0.95) 55%, 
+          #071526 100%
+        );
+      }
+
       .annur-hero__container {
         grid-template-columns: 1fr;
         gap: 32px;
@@ -324,7 +400,14 @@
       }
 
       .annur-hero__visual {
-        display: none;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-top: 12px;
+      }
+
+      .annur-hero__showcase-card {
+        max-width: 460px;
       }
 
       .annur-hero .carousel-control-prev,
@@ -494,42 +577,17 @@
                                     </div>
                                 </div>
                             @else
-                                <!-- Pure Sleek Abstract 3D Geometric Crystal Artwork (No text, pure attractive visual) -->
-                                <div style="position: relative; width: 100%; max-width: 440px; height: 420px; display: flex; align-items: center; justify-content: center;">
-                                    <!-- Radiant Outer Ambient Light Glow -->
-                                    <div style="position: absolute; width: 95%; height: 95%; border-radius: 50%; background: radial-gradient(circle, rgba(201, 162, 39, 0.28) 0%, rgba(7, 21, 38, 0) 70%); filter: blur(40px); z-index: 1;"></div>
-
-                                    <!-- Outer Rotating Dotted Orbital Ring -->
-                                    <svg style="position: absolute; inset: 0; width: 100%; height: 100%; z-index: 2; animation: spinOrbit 35s linear infinite;" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="200" cy="200" r="175" stroke="#E8C766" stroke-width="1.5" stroke-dasharray="6 12" stroke-opacity="0.4" />
-                                        <circle cx="200" cy="25" r="5" fill="#E8C766" />
-                                        <circle cx="375" cy="200" r="4" fill="#C9A227" />
-                                        <circle cx="200" cy="375" r="5" fill="#E8C766" />
-                                        <circle cx="25" cy="200" r="4" fill="#C9A227" />
-                                    </svg>
-
-                                    <!-- Inner Geometric Islamic 8-Point Star Mesh Lattice -->
-                                    <svg style="position: absolute; inset: 0; width: 100%; height: 100%; z-index: 3; animation: spinReverse 50s linear infinite;" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="200" cy="200" r="130" stroke="url(#goldGradFinal2)" stroke-width="1.5" stroke-opacity="0.6" />
-                                        <circle cx="200" cy="200" r="90" stroke="#E8C766" stroke-width="1" stroke-opacity="0.35" />
-                                        
-                                        <rect x="110" y="110" width="180" height="180" stroke="url(#goldGradFinal2)" stroke-width="1.8" stroke-opacity="0.75" transform="rotate(0 200 200)" />
-                                        <rect x="110" y="110" width="180" height="180" stroke="url(#goldGradFinal2)" stroke-width="1.8" stroke-opacity="0.75" transform="rotate(45 200 200)" />
-                                        <rect x="130" y="130" width="140" height="140" stroke="#E8C766" stroke-width="1.2" stroke-opacity="0.4" transform="rotate(22.5 200 200)" />
-                                        <rect x="130" y="130" width="140" height="140" stroke="#E8C766" stroke-width="1.2" stroke-opacity="0.4" transform="rotate(67.5 200 200)" />
-
-                                        <defs>
-                                            <linearGradient id="goldGradFinal2" x1="0%" y1="0%" x2="100%" y2="100%">
-                                                <stop offset="0%" stop-color="#C9A227" />
-                                                <stop offset="50%" stop-color="#F5E199" />
-                                                <stop offset="100%" stop-color="#C9A227" />
-                                            </linearGradient>
-                                        </defs>
-                                    </svg>
-
-                                    <!-- Central Glowing Crystal Prism Core -->
-                                    <div style="position: relative; z-index: 4; background: linear-gradient(135deg, rgba(16, 42, 76, 0.7) 0%, rgba(7, 21, 38, 0.85) 100%); backdrop-filter: blur(20px); width: 140px; height: 140px; border-radius: 30px; transform: rotate(45deg); border: 2px solid rgba(232, 199, 102, 0.6); box-shadow: 0 0 40px rgba(201, 162, 39, 0.35), inset 0 0 20px rgba(232, 199, 102, 0.2); display: flex; align-items: center; justify-content: center;">
-                                        <div style="width: 70px; height: 70px; border-radius: 16px; border: 1.5px solid rgba(245, 225, 153, 0.8); background: radial-gradient(circle, rgba(201, 162, 39, 0.4) 0%, transparent 80%); box-shadow: 0 0 20px rgba(201, 162, 39, 0.5);"></div>
+                                <!-- 3D Mosque Showcase Video on Right Column -->
+                                <div class="annur-hero__showcase-card">
+                                    <div class="annur-hero__showcase-glow"></div>
+                                    <div class="annur-hero__showcase-inner">
+                                        <video class="annur-hero__showcase-video" autoplay muted loop playsinline poster="{{ asset('frontend/assets/images/hero/hero-pesantren.jpg') }}">
+                                            <source src="{{ asset('frontend/assets/images/hero/hero-pesantren.mp4') }}" type="video/mp4">
+                                        </video>
+                                        <div class="annur-hero__showcase-tag">
+                                            <span class="annur-hero__showcase-dot"></span>
+                                            <span>Kompleks Pesma An-Nur Surabaya</span>
+                                        </div>
                                     </div>
                                 </div>
                             @endif
@@ -625,38 +683,17 @@
                         </div>
                     </div>
                 @else
-                    <!-- Pure Sleek Abstract 3D Geometric Crystal Artwork (No text, pure attractive visual) -->
-                    <div style="position: relative; width: 100%; max-width: 440px; height: 420px; display: flex; align-items: center; justify-content: center;">
-                        <div style="position: absolute; width: 95%; height: 95%; border-radius: 50%; background: radial-gradient(circle, rgba(201, 162, 39, 0.28) 0%, rgba(7, 21, 38, 0) 70%); filter: blur(40px); z-index: 1;"></div>
-
-                        <svg style="position: absolute; inset: 0; width: 100%; height: 100%; z-index: 2; animation: spinOrbit 35s linear infinite;" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="200" cy="200" r="175" stroke="#E8C766" stroke-width="1.5" stroke-dasharray="6 12" stroke-opacity="0.4" />
-                            <circle cx="200" cy="25" r="5" fill="#E8C766" />
-                            <circle cx="375" cy="200" r="4" fill="#C9A227" />
-                            <circle cx="200" cy="375" r="5" fill="#E8C766" />
-                            <circle cx="25" cy="200" r="4" fill="#C9A227" />
-                        </svg>
-
-                        <svg style="position: absolute; inset: 0; width: 100%; height: 100%; z-index: 3; animation: spinReverse 50s linear infinite;" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="200" cy="200" r="130" stroke="url(#goldGradFinal2)" stroke-width="1.5" stroke-opacity="0.6" />
-                            <circle cx="200" cy="200" r="90" stroke="#E8C766" stroke-width="1" stroke-opacity="0.35" />
-                            
-                            <rect x="110" y="110" width="180" height="180" stroke="url(#goldGradFinal2)" stroke-width="1.8" stroke-opacity="0.75" transform="rotate(0 200 200)" />
-                            <rect x="110" y="110" width="180" height="180" stroke="url(#goldGradFinal2)" stroke-width="1.8" stroke-opacity="0.75" transform="rotate(45 200 200)" />
-                            <rect x="130" y="130" width="140" height="140" stroke="#E8C766" stroke-width="1.2" stroke-opacity="0.4" transform="rotate(22.5 200 200)" />
-                            <rect x="130" y="130" width="140" height="140" stroke="#E8C766" stroke-width="1.2" stroke-opacity="0.4" transform="rotate(67.5 200 200)" />
-
-                            <defs>
-                                <linearGradient id="goldGradFinal2" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" stop-color="#C9A227" />
-                                    <stop offset="50%" stop-color="#F5E199" />
-                                    <stop offset="100%" stop-color="#C9A227" />
-                                </linearGradient>
-                            </defs>
-                        </svg>
-
-                        <div style="position: relative; z-index: 4; background: linear-gradient(135deg, rgba(16, 42, 76, 0.7) 0%, rgba(7, 21, 38, 0.85) 100%); backdrop-filter: blur(20px); width: 140px; height: 140px; border-radius: 30px; transform: rotate(45deg); border: 2px solid rgba(232, 199, 102, 0.6); box-shadow: 0 0 40px rgba(201, 162, 39, 0.35), inset 0 0 20px rgba(232, 199, 102, 0.2); display: flex; align-items: center; justify-content: center;">
-                            <div style="width: 70px; height: 70px; border-radius: 16px; border: 1.5px solid rgba(245, 225, 153, 0.8); background: radial-gradient(circle, rgba(201, 162, 39, 0.4) 0%, transparent 80%); box-shadow: 0 0 20px rgba(201, 162, 39, 0.5);"></div>
+                    <!-- 3D Mosque Showcase Video on Right Column -->
+                    <div class="annur-hero__showcase-card">
+                        <div class="annur-hero__showcase-glow"></div>
+                        <div class="annur-hero__showcase-inner">
+                            <video class="annur-hero__showcase-video" autoplay muted loop playsinline poster="{{ asset('frontend/assets/images/hero/hero-pesantren.jpg') }}">
+                                <source src="{{ asset('frontend/assets/images/hero/hero-pesantren.mp4') }}" type="video/mp4">
+                            </video>
+                            <div class="annur-hero__showcase-tag">
+                                <span class="annur-hero__showcase-dot"></span>
+                                <span>Kompleks Pesma An-Nur Surabaya</span>
+                            </div>
                         </div>
                     </div>
                 @endif
