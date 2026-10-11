@@ -27,94 +27,50 @@
       padding: 85px 20px;
     }
 
-    .annur-hero__showcase-card {
-      position: relative;
-      width: 100%;
-      max-width: 520px;
-    }
-
-    .annur-hero__showcase-glow {
+    /* Full Immersive Video Background */
+    .annur-hero__video-bg {
       position: absolute;
-      inset: -15px;
-      background: radial-gradient(circle at center, rgba(201, 162, 39, 0.28) 0%, rgba(7, 21, 38, 0) 70%);
-      filter: blur(28px);
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: right center;
       z-index: 1;
       pointer-events: none;
     }
 
-    .annur-hero__showcase-inner {
-      position: relative;
-      z-index: 2;
-      border-radius: 22px;
-      overflow: hidden;
-      background: rgba(7, 21, 38, 0.9);
-      border: 1.5px solid rgba(201, 162, 39, 0.38);
-      box-shadow: 0 24px 50px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.12);
-      transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
-    }
-
-    .annur-hero__showcase-inner:hover {
-      transform: translateY(-4px);
-      border-color: rgba(232, 199, 102, 0.65);
-      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 30px rgba(201, 162, 39, 0.25);
-    }
-
-    .annur-hero__showcase-video {
-      width: 100%;
-      height: auto;
-      aspect-ratio: 16 / 9;
-      object-fit: cover;
-      display: block;
-    }
-
-    .annur-hero__showcase-tag {
+    /* Soft Gradient & Vignette Overlay - ensures text readability on left while leaving 3D mosque background seamless & vibrant on right */
+    .annur-hero__overlay {
       position: absolute;
-      bottom: 14px;
-      left: 14px;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 14px;
-      background: rgba(7, 21, 38, 0.82);
-      border: 1px solid rgba(201, 162, 39, 0.32);
-      border-radius: 999px;
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      color: #E8C766;
-      font-size: 11.5px;
-      font-weight: 700;
-      letter-spacing: 0.3px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
-    }
-
-    .annur-hero__showcase-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: #4ade80;
-      box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.25);
+      inset: 0;
+      background:
+        linear-gradient(to bottom, rgba(7, 21, 38, 0.4) 0%, transparent 15%, transparent 82%, #071526 100%),
+        linear-gradient(90deg, #071526 0%, rgba(7, 21, 38, 0.94) 38%, rgba(7, 21, 38, 0.45) 62%, rgba(7, 21, 38, 0.05) 82%, transparent 100%);
+      z-index: 2;
+      pointer-events: none;
     }
 
     .annur-hero__bg {
       position: absolute;
       inset: 0;
       background-image:
-        url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23C9A227' fill-opacity='0.05' fill-rule='evenodd'%3E%3Cpath d='M0 0h40v40H0V0zm40 40h40v40H40V40zm0-40h40v40H40V0zM0 40h40v40H0V40z'/%3E%3Ccircle cx='40' cy='40' r='20' stroke='%23C9A227' stroke-opacity='0.07' stroke-width='1.5' fill='none'/%3E%3Cpath d='M40 0L80 40 40 80 0 40z' stroke='%23C9A227' stroke-opacity='0.05' stroke-width='1' fill='none'/%3E%3C/g%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23C9A227' fill-opacity='0.04' fill-rule='evenodd'%3E%3Cpath d='M0 0h40v40H0V0zm40 40h40v40H40V40zm0-40h40v40H40V0zM0 40h40v40H0V40z'/%3E%3Ccircle cx='40' cy='40' r='20' stroke='%23C9A227' stroke-opacity='0.06' stroke-width='1.5' fill='none'/%3E%3Cpath d='M40 0L80 40 40 80 0 40z' stroke='%23C9A227' stroke-opacity='0.04' stroke-width='1' fill='none'/%3E%3C/g%3E%3C/svg%3E"),
         linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
       background-size: 80px 80px, 50px 50px, 50px 50px;
-      mask-image: linear-gradient(to bottom, black, transparent 95%);
+      mask-image: linear-gradient(to right, black 30%, transparent 75%);
+      z-index: 2;
       pointer-events: none;
     }
 
     .annur-hero__container {
       position: relative;
-      z-index: 2;
-      width: min(1180px, 100%);
+      z-index: 4;
+      width: min(1200px, 100%);
       margin: 0 auto;
       display: grid;
       grid-template-columns: 1.15fr 0.85fr;
-      gap: 60px;
+      gap: 50px;
       align-items: center;
     }
 
@@ -371,10 +327,16 @@
         padding: 70px 20px 54px;
       }
 
-      .annur-hero__video-overlay {
-        background: linear-gradient(180deg, 
-          rgba(7, 21, 38, 0.88) 0%, 
-          rgba(7, 21, 38, 0.95) 55%, 
+      .annur-hero__video-bg {
+        object-position: 72% center;
+        opacity: 0.32;
+      }
+
+      .annur-hero__overlay {
+        background: linear-gradient(
+          180deg,
+          rgba(7, 21, 38, 0.85) 0%,
+          rgba(7, 21, 38, 0.94) 60%,
           #071526 100%
         );
       }
@@ -400,14 +362,7 @@
       }
 
       .annur-hero__visual {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        margin-top: 12px;
-      }
-
-      .annur-hero__showcase-card {
-        max-width: 460px;
+        display: none;
       }
 
       .annur-hero .carousel-control-prev,
@@ -478,6 +433,11 @@
 @if($banners->count() > 0)
     <!-- Start Banner Area - Slider -->
     <div class="annur-hero">
+        <!-- Full Immersive Video Background -->
+        <video class="annur-hero__video-bg" autoplay muted loop playsinline poster="{{ asset('frontend/assets/images/hero/hero-pesantren.jpg') }}">
+            <source src="{{ asset('frontend/assets/images/hero/hero-pesantren.mp4') }}" type="video/mp4">
+        </video>
+        <div class="annur-hero__overlay"></div>
         <div class="annur-hero__bg"></div>
         <div id="annurHeroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
 
@@ -563,30 +523,15 @@
                             </div>
                         </div>
                         
-                        <!-- Right Column (Pure Sleek Abstract 3D Geometric Crystal Artwork - 0 Text) -->
+                        <!-- Right Column (Kept completely open so the 3D mosque background shines large & unobstructed) -->
                         <div class="annur-hero__visual">
                             @if($imageExists && !empty($imageUrl))
-                                <!-- Custom Banner Image Frame (When custom photo uploaded in Admin Panel) -->
-                                <div style="position: relative; width: 100%; max-width: 440px;">
+                                <!-- Custom Banner Image Frame (Only when custom photo uploaded in Admin Panel) -->
+                                <div style="position: relative; width: 100%; max-width: 460px;">
                                     <div style="position: absolute; inset: -15px; background: radial-gradient(circle, rgba(201, 162, 39, 0.25) 0%, rgba(7, 21, 38, 0) 70%); border-radius: 24px; filter: blur(25px); z-index: 1;"></div>
-                                    
                                     <div style="position: relative; z-index: 2; border-radius: 20px; padding: 12px; background: rgba(255, 255, 255, 0.06); backdrop-filter: blur(12px); border: 1.5px solid rgba(201, 162, 39, 0.35); box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);">
                                         <div style="border-radius: 14px; overflow: hidden; height: 380px; position: relative;">
                                             <img src="{{ $imageUrl }}" alt="Banner" style="width: 100%; height: 100%; object-fit: cover; object-position: top center;">
-                                        </div>
-                                    </div>
-                                </div>
-                            @else
-                                <!-- 3D Mosque Showcase Video on Right Column -->
-                                <div class="annur-hero__showcase-card">
-                                    <div class="annur-hero__showcase-glow"></div>
-                                    <div class="annur-hero__showcase-inner">
-                                        <video class="annur-hero__showcase-video" autoplay muted loop playsinline poster="{{ asset('frontend/assets/images/hero/hero-pesantren.jpg') }}">
-                                            <source src="{{ asset('frontend/assets/images/hero/hero-pesantren.mp4') }}" type="video/mp4">
-                                        </video>
-                                        <div class="annur-hero__showcase-tag">
-                                            <span class="annur-hero__showcase-dot"></span>
-                                            <span>Kompleks Pesma An-Nur Surabaya</span>
                                         </div>
                                     </div>
                                 </div>
@@ -623,7 +568,15 @@
     @endphp
     <div class="annur-hero {{ $staticImageExists ? 'has-bg-image' : '' }}"
          @if($staticImageExists) style="background-image: url('{{ $staticImageUrl }}');" @endif>
-         
+
+        @if(!$staticImageExists)
+            <!-- Full Immersive Video Background -->
+            <video class="annur-hero__video-bg" autoplay muted loop playsinline poster="{{ asset('frontend/assets/images/hero/hero-pesantren.jpg') }}">
+                <source src="{{ asset('frontend/assets/images/hero/hero-pesantren.mp4') }}" type="video/mp4">
+            </video>
+            <div class="annur-hero__overlay"></div>
+        @endif
+
         <div class="annur-hero__bg"></div>
          
         <div class="annur-hero__container">
@@ -670,29 +623,15 @@
                 </div>
             </div>
             
-            <!-- Right Column (Pure Sleek Abstract 3D Geometric Crystal Artwork - 0 Text) -->
+            <!-- Right Column (Kept completely open so the 3D mosque background shines large & unobstructed) -->
             <div class="annur-hero__visual">
                 @if($staticImageExists && !empty($staticImageUrl))
                     <!-- Custom Banner Image Frame -->
-                    <div style="position: relative; width: 100%; max-width: 440px;">
+                    <div style="position: relative; width: 100%; max-width: 460px;">
                         <div style="position: absolute; inset: -15px; background: radial-gradient(circle, rgba(201, 162, 39, 0.25) 0%, rgba(7, 21, 38, 0) 70%); border-radius: 24px; filter: blur(25px); z-index: 1;"></div>
                         <div style="position: relative; z-index: 2; border-radius: 20px; padding: 12px; background: rgba(255, 255, 255, 0.06); backdrop-filter: blur(12px); border: 1.5px solid rgba(201, 162, 39, 0.35); box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);">
                             <div style="border-radius: 14px; overflow: hidden; height: 380px; position: relative;">
                                 <img src="{{ $staticImageUrl }}" alt="Banner" style="width: 100%; height: 100%; object-fit: cover; object-position: top center;">
-                            </div>
-                        </div>
-                    </div>
-                @else
-                    <!-- 3D Mosque Showcase Video on Right Column -->
-                    <div class="annur-hero__showcase-card">
-                        <div class="annur-hero__showcase-glow"></div>
-                        <div class="annur-hero__showcase-inner">
-                            <video class="annur-hero__showcase-video" autoplay muted loop playsinline poster="{{ asset('frontend/assets/images/hero/hero-pesantren.jpg') }}">
-                                <source src="{{ asset('frontend/assets/images/hero/hero-pesantren.mp4') }}" type="video/mp4">
-                            </video>
-                            <div class="annur-hero__showcase-tag">
-                                <span class="annur-hero__showcase-dot"></span>
-                                <span>Kompleks Pesma An-Nur Surabaya</span>
                             </div>
                         </div>
                     </div>
